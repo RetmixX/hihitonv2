@@ -1,0 +1,16 @@
+version: "3"
+
+volumes:
+  db_data:
+    driver: local
+
+services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${USER:-retmix}
+      POSTGRES_PASSWORD: ${PASSWORD:-retmix}
+      POSTGRES_DB: ${DB:-retmix}
+    volumes:
+      - db_data:/var/lib/postgresql/data
