@@ -8,7 +8,12 @@ edition = "2021"
 [dependencies]
 actix-web = "4.4.0"
 actix-web-validator = "5.0.1"
-chrono = "0.4.31"
+async_once = "0.2.6"
+chrono = { version = "0.4.31", features = ["serde"] }
+lazy_static = "1.4.0"
 serde = { version = "1.0.188", features = ["derive"] }
 serde_json = "1.0.107"
 validator = { version = "0.16.1", features = ["derive"] }
+sqlx = { version = "0.7.1", features = ["runtime-tokio-native-tls", "postgres"] }
+thiserror = "1.0.49"
+dotenv = "0.15.0"
