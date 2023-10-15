@@ -1,5 +1,6 @@
 use chrono::{DateTime, Local};
 use serde::Serialize;
+use utoipa::ToSchema;
 
 #[derive(Debug)]
 pub enum ErrorType {
@@ -17,7 +18,7 @@ pub struct ApiError {
     pub type_error: ErrorType,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, ToSchema)]
 pub struct ApiErrorResponse {
     pub message: String,
     pub info: String,
